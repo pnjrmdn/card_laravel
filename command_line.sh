@@ -19,3 +19,7 @@ composer create-project laravel/laravel card
 @push('')
 @endpush
 # isi code laman child untuk di push ke parent
+
+{{ config('app.name')}}
+#mengambil var dari .env harus di reload servicesnya
+
