@@ -13,17 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// Route::get('/pegawai','PegawaiController@index');
+$folder='App\Http\Controllers\\';
+Route::get('/', $folder.'DataController@index');
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/home', function () {
-    return 'Ini Halaman Home';
-});
+// Route::get('/home', function () {
+//     return view('');
+// });
 
 // Route::get('user/{id}', function ($id){
 //     return 'User' . $id;
