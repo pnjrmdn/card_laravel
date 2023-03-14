@@ -16,4 +16,18 @@ class DataController extends Controller
     	return view('index',['card' => $card]);
  
     }
+
+	public function add(Request $request){
+
+		$date_now = date("Y-m-d");
+
+	DB::table('card')->insert([
+		'name' => $request->name,
+		'price' => $request->price,
+		'date' => $date_now
+
+	]);
+
+	return redirect('/');
+	}
 }

@@ -13,13 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+$folder='App\Http\Controllers\\';
+Route::get('/', $folder.'DataController@index');
+
+Route::post('/index/add', $folder.'DataController@add');
+
+Route::get('/index/edit/{id}', $folder.'DataController@edit');
+
 // Route::get('/', function () {
 //     return view('index');
 // });
 
 // Route::get('/pegawai','PegawaiController@index');
-$folder='App\Http\Controllers\\';
-Route::get('/', $folder.'DataController@index');
 
 // Route::get('/', function () {
 //     return view('welcome');

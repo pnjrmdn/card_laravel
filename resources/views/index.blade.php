@@ -277,13 +277,13 @@
         </div> <br>
 
 
-        <form>
-
+        <form action="/index/add" method="post">
+            {{ csrf_field() }}
             <div class="row">
                 <div class="col">
                     <div class="mb-3 text-center">
                         <label class="text-center"><b>Input Item Transaction</b></label>
-                        <input value="Gorengan" type="email" class="form-control" id="exampleInputEmail1"
+                        <input name='name' value="" type="text" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">ex: Gorengan</div>
                     </div>
@@ -291,7 +291,7 @@
                 <div class="col">
                     <div class="mb-3 text-center">
                         <label class="form-label text-center"><b>Price Rp.</b></label>
-                        <input value="6000" type="email" class="form-control" id="exampleInputEmail1"
+                        <input name='price' value="" type="text" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">ex: 1000</div>
                     </div>
@@ -299,7 +299,7 @@
                 <div class="col">
                     <div class="mb-3 text-center">
                         <label class="form-label text-center"><b>Balance Rp.</b></label>
-                        <input value="500000" type="email" class="form-control" id="exampleInputEmail1"
+                        <input value="" type="text" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">ex: 100000</div>
                     </div>
