@@ -7,27 +7,38 @@ use Illuminate\Support\Facades\DB;
 
 class DataController extends Controller
 {
-    public function index()
-    {
-    	// mengambil data dari table pegawai
-    	$card = DB::table('card')->get();
- 
-    	// mengirim data pegawai ke view index
-    	return view('index',['card' => $card]);
- 
-    }
+	public function index()
+	{
 
-	public function add(Request $request){
+		$card = DB::table('card')->get();
+
+		return view('index', ['card' => $card]);
+	}
+
+	// add data --------------------------------------------------------------------------------------------
+	public function add(Request $request)
+	{
 
 		$date_now = date("Y-m-d");
 
-	DB::table('card')->insert([
-		'name' => $request->name,
-		'price' => $request->price,
-		'date' => $date_now
+		DB::table('card')->insert([
+			'name' => $request->name,
+			'price' => $request->price,
+			'date' => $date_now
 
-	]);
+		]);
 
-	return redirect('/');
+		return redirect('/');
 	}
+
+	// edit data --------------------------------------------------------------------------------------------
+	public function edit($id)
+	{
+
+		$card = DB::table('card')->where('id', $id)->get();
+
+		return view('index', ['card' => $card]);
+	}
+
+	
 }

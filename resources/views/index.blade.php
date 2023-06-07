@@ -279,6 +279,7 @@
 
         <form action="/index/add" method="post">
             {{ csrf_field() }}
+            @foreach($card as $e)
             <div class="row">
                 <div class="col">
                     <div class="mb-3 text-center">
@@ -308,6 +309,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
+            @endforeach
         </form>
 
         <!-- batas col -->

@@ -21,6 +21,8 @@ Route::post('/index/add', $folder.'DataController@add');
 
 Route::get('/index/edit/{id}', $folder.'DataController@edit');
 
+
+
 // Route::get('/', function () {
 //     return view('index');
 // });
